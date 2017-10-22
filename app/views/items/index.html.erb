@@ -33,6 +33,6 @@
 </table>
 
 <br>
-<% if session[:login]==1%>
+<% if user_signed_in? %>
 <p><%= link_to 'New Item', new_item_path %></p>
 <%end%>

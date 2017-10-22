@@ -16,7 +16,14 @@
       </div>
       <div id='first-column'>
         <div class="loginbox">
-          <h2 class="BoxHeaders">Login here...</h2>
+          
+           <% if user_signed_in? %>
+ <div>
+   <p>Hi <%= current_user.email %> <br>(<%= link_to 'Sign out', destroy_user_session_path, :method => :delete%>)</p>
+ </div>
+<% else %>
+ <p><%= link_to 'Register', new_user_registration_path %> or <%= link_to 'Sign in', new_user_session_path %></p>
+ <% end %>
         </div>
       
       <div class="searchbox">
