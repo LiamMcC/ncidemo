@@ -1,0 +1,23 @@
+<h1>Products Catalog</h1>
+<br>
+<table class="catalog">
+   
+  <% @categories.each do |category| %>
+      <tr>
+        <td>
+          
+          <div class="Category">
+               
+           <a href="/homecategory/<%= category.title %>"><%= category.title %></a>
+           <p><%= category.description %></p>
+          </div>
+        
+        </td>
+      </tr>
+    <% end %>
+</table>
+
+<br>
+<% if user_signed_in? %>
+<p><%= link_to 'New Item', new_item_path %></p>
+<%end%>
