@@ -29,6 +29,6 @@
   <strong>Brand:</strong>
   <%= @item.brand %>
 </p>
-
+<a href="/cart/<%= @item.id %>">Add to Cart</a>
 <%= link_to 'Edit', edit_item_path(@item) %> |
 <%= link_to 'Back', items_path %>

@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html>
   <head>
-    <title><%= yield(:title) %> | GolfStore</title>
+    <title><%= yield(:title) %> | Liams GolfStore</title>
     <%= csrf_meta_tags %>
 
     <%= stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track': 'reload' %>
@@ -19,15 +19,21 @@
           
            <% if user_signed_in? %>
  <div>
-   <p>Hi <%= current_user.email %> <br>(<%= link_to 'Sign out', destroy_user_session_path, :method => :delete%>)</p>
+   <p>Hi <%= current_user.email %> <br>(<%= link_to 'Sign out', destroy_user_session_path, :method => :delete%>)    <%= link_to 'Edit Profile', edit_user_registration_path %>
+   <h2 class="BoxHeaders">Search Catalog <%= current_user.current_sign_in_at %></h2>
+   </p>
  </div>
 <% else %>
  <p><%= link_to 'Register', new_user_registration_path %> or <%= link_to 'Sign in', new_user_session_path %></p>
  <% end %>
         </div>
+        
+        <div class="searchbox">
+        <h2><%= link_to "View Cart",  cart_path %></h2>
+      </div>
       
       <div class="searchbox">
-        <h2 class="BoxHeaders">Search Catalog</h2>
+      
       </div>
       </div>
     </div>
