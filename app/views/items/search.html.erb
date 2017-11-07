@@ -1,9 +1,13 @@
-<h1>Site#homecategory</h1>
-<p>Find me in app/views/site/homecategory.html.erb</p>
 
 
-<h1>Category...</h1>
-<br>
+<h2>You Searched Our Product Catalog For <%= @search_term %></h2>
+
+<% if @items.length == 0  %>
+<br />
+<h2>No products were found to match your search</h2>
+<% end %>
+
+
 <table class="catalog">
   <% @items.each do |item| %>
       <tr>
@@ -34,7 +38,5 @@
     <% end %>
 </table>
 
-<br>
-<% if user_signed_in? %>
-<p><%= link_to 'New Item', new_item_path %></p>
-<%end%>
+
+

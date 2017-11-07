@@ -31,7 +31,7 @@ Rails.application.routes.draw do
   
   get 'homecategory/:title', to: 'static_pages#homecategory'
   
-   
+   post '/search' => 'items#search'
  
   root :to => 'site#home'
 
